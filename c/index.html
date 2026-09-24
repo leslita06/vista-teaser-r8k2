@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VISTA | Venture Studio Partner for Africa</title>
+<meta name="description" content="VISTA, venture studio partner for Africa. Backing bold business builders.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="VISTA | Venture Studio Partner for Africa">
+<meta property="og:description" content="Backing bold business builders. Want to be involved, or to know more? Reach out now.">
+<meta property="og:image" content="https://vista-africa.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+:root {
+  --fond: #0C3A31; --texte: #F3EEE4; --doux: #A8C4B9; --ligne: rgba(243,238,228,.16);
+  --ambre: #F8B133; --rouge: #FF8A89; --bouton: #F8B133; --bouton-texte: #1B1A12;
+  --display: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --corps: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+html { overflow-x: clip; }
+body { background: var(--fond); color: var(--texte); font-family: var(--corps); -webkit-font-smoothing: antialiased; min-height: 100svh; }
+.page { min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); }
+.gauche { display: grid; grid-template-rows: auto 1fr auto; padding: clamp(20px, 4vh, 40px) clamp(16px, 5vw, 80px) 0; }
+main { align-self: center; padding: 32px 0; max-width: 680px; }
+.logo { width: clamp(190px, 20vw, 260px); height: auto; display: block; }
+.descripteur { margin-top: 16px; color: var(--doux); font: 600 12px/1.4 var(--corps); letter-spacing: .28em; text-transform: uppercase; }
+h1 { margin-top: clamp(24px, 5vh, 48px); font: 800 clamp(44px, 5.8vw, 92px)/.95 var(--display); letter-spacing: -.035em; text-wrap: balance; }
+h1 span { display: block; color: var(--ambre); }
+.ask { margin-top: clamp(18px, 3vh, 28px); font-size: clamp(17px, 1.4vw, 20px); color: var(--doux); }
+.ask strong { color: var(--texte); font-weight: 600; }
+#inscription { margin-top: 22px; }
+form { background: rgba(243,238,228,.06); }
+input::placeholder { color: #8FAEA3; }
+.merci p:first-child { color: var(--ambre); }
+.ecrire { margin-top: 14px; font-size: 14px; color: var(--doux); }
+footer { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; border-top: 1px solid var(--ligne);
+  padding: 16px 0 20px; font-size: 12.5px; color: #86A69A; }
+footer .mention { flex: 1 1 320px; }
+.mosaique { display: grid; grid-template-columns: repeat(6, 1fr); grid-auto-rows: 1fr; height: 100svh; position: sticky; top: 0; }
+.carreau { display: grid; place-items: center; overflow: hidden; }
+.carreau .t { width: 62%; height: 62%; transform: rotate(var(--rot)); transition: transform .6s cubic-bezier(.2,.8,.2,1);
+  animation: entre .8s var(--d) cubic-bezier(.2,.8,.2,1) both; }
+.carreau:hover .t { transform: rotate(calc(var(--rot) + 90deg)); }
+@keyframes entre { from { opacity: 0; transform: rotate(var(--rot)) scale(.6); } }
+@media (max-width: 860px) {
+  .page { grid-template-columns: 1fr; }
+  .mosaique { order: -1; height: auto; position: static; grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(2, 16.67vw); overflow: hidden; }
+  .mosaique .carreau:nth-child(n+13) { display: none; }
+  main { padding: 24px 0; }
+}
+@media (prefers-reduced-motion: reduce) { .carreau .t { animation: none; transition: none; } }
+
+input, select, button { font: 500 16px/1 var(--corps); border-radius: 10px; height: 50px; }
+input, select { width: 100%; min-width: 0; color: var(--texte); background: transparent; border: 1px solid transparent; padding: 0 14px; }
+select { appearance: none; cursor: pointer; padding-right: 34px; border-left-color: var(--ligne); border-radius: 0 10px 10px 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23F8B133' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 12px center; }
+select option { color: #0C3A31; }
+input:focus-visible, select:focus-visible { outline: none; border-color: var(--ambre); }
+button { border: 0; cursor: pointer; padding: 0 24px; white-space: nowrap; background: var(--bouton); color: var(--bouton-texte); font-weight: 600; transition: filter .2s, transform .2s; }
+button:hover { filter: brightness(1.08); } button:active { transform: translateY(1px); }
+button:focus-visible { outline: 2px solid var(--texte); outline-offset: 2px; }
+form { display: grid; gap: 8px; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) auto; border: 1px solid var(--ligne); border-radius: 14px; padding: 6px; }
+.merci { display: none; } .envoye form { display: none; } .envoye .merci { display: block; }
+.merci p:first-child { font: 800 30px/1.1 var(--display); letter-spacing: -.02em; }
+.merci p + p { margin-top: 6px; font-size: 18px; }
+.erreur { margin-top: 10px; font-size: 14px; color: var(--rouge); display: none; } .echec .erreur { display: block; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+a { color: inherit; text-underline-offset: 3px; }
+@media (max-width: 760px) {
+  form { grid-template-columns: 1fr; }
+  select { border-left-color: transparent; border-top: 1px solid var(--ligne); border-radius: 0; }
+}
+
+.bientot { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--ligne); border-radius: 999px;
+  padding: 8px 16px; font: 600 11.5px/1 var(--corps); letter-spacing: .18em; text-transform: uppercase; color: var(--doux); }
+.bientot i { width: 7px; height: 7px; border-radius: 50%; background: var(--ambre); animation: pouls 2.4s ease-in-out infinite; }
+@keyframes pouls { 0%, 100% { box-shadow: 0 0 0 0 rgba(248,177,51,.55); } 50% { box-shadow: 0 0 0 7px rgba(248,177,51,0); } }
+@media (prefers-reduced-motion: reduce) { .bientot i { animation: none; } }
+@media (max-width: 760px) { .descripteur { letter-spacing: .2em; } }
+
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="gauche">
+    <div><p class="bientot"><i aria-hidden="true"></i>Full site coming soon</p></div>
+    <main>
+      <img class="logo" src="../logo_vista_blanc.svg" alt="VISTA" width="260" height="37">
+      <p class="descripteur">Venture studio partner for Africa</p>
+      <h1>Backing bold <span>business builders.</span></h1>
+      <p class="ask">Want to be involved, or to know more? <strong>Reach out now.</strong></p>
+      <div id="inscription">
+      <form id="formulaire" novalidate>
+        <label class="sr" for="email">Your email</label>
+        <input id="email" name="email" type="email" placeholder="Your email" autocomplete="email" required>
+        <label class="sr" for="role">I am…</label>
+        <select id="role" name="role" required>
+          <option>I run a venture studio</option>
+          <option>I invest or fund</option>
+          <option>Something else</option>
+        </select>
+        <button type="submit">Reach out</button>
+      </form>
+      <div class="merci" role="status" aria-live="polite">
+        <p>Thank you.</p>
+        <p>You will hear from us before anyone else.</p>
+      </div>
+      <p class="erreur" role="alert">That did not go through. Please write to us at the address below.</p>
+    </div>
+      <p class="ecrire">Or write to us: <a href="mailto:luca@vista-africa.com">luca@vista-africa.com</a></p>
+    </main>
+    <footer><span class="mention">© 2026 VISTA. We will only use your address to tell you when VISTA opens. Nothing else, and never passed on.</span>
+    <a href="https://www.linkedin.com/company/vista-africa/" target="_blank" rel="noopener">LinkedIn</a></footer>
+  </div>
+  <div class="mosaique" aria-hidden="true"><div class="carreau" style="--rot:90deg;--d:0ms;background:#0C3A31"><svg class="t" viewBox="43.0 -1.0 49.8 41.0" aria-hidden="true"><path fill="#1E6B58" d="M50.98-1.71h33.82v12.78c0,11.61-9.43,21.04-21.04,21.04h-12.78V-1.71h0Z" transform="translate(105.15 73.96) rotate(-135)"/></svg></div><div class="carreau" style="--rot:180deg;--d:45ms;background:#14564A"></div><div class="carreau" style="--rot:180deg;--d:90ms;background:#0F463B"><svg class="t" viewBox="165.0 59.1 49.8 41.0" aria-hidden="true"><path fill="#F3EEE4" d="M172.97,67.12h33.82v12.78c0,11.61-9.43,21.04-21.04,21.04h-12.78v-33.82h0Z" transform="translate(115.04 -109.66) rotate(45)"/></svg></div><div class="carreau" style="--rot:90deg;--d:135ms;background:#0C3A31"><svg class="t" viewBox="121.2 11.5 69.6 45.9" aria-hidden="true"><polygon fill="#F8B133" points="146.17 56.53 190.02 12.68 189.89 12.55 142.31 12.55 122.25 32.61 146.17 56.53"/></svg></div><div class="carreau" style="--rot:90deg;--d:180ms;background:#0F463B"><svg class="t" viewBox="189.0 11.5 69.6 45.9" aria-hidden="true"><polygon fill="#F8B133" points="233.86 56.53 257.78 32.61 237.72 12.55 190.14 12.55 190.02 12.68 233.86 56.53"/></svg></div><div class="carreau" style="--rot:180deg;--d:225ms;background:#0C3A31"><svg class="t" viewBox="-1.0 41.6 69.6 46.0" aria-hidden="true"><polygon fill="#ED4746" points="23.92 42.71 0 66.62 20.06 86.68 67.64 86.68 67.76 86.55 23.92 42.71"/></svg></div><div class="carreau" style="--rot:0deg;--d:45ms;background:#0F463B"><svg class="t" viewBox="43.0 -1.0 49.8 41.0" aria-hidden="true"><path fill="#F3EEE4" d="M50.98-1.71h33.82v12.78c0,11.61-9.43,21.04-21.04,21.04h-12.78V-1.71h0Z" transform="translate(105.15 73.96) rotate(-135)"/></svg></div><div class="carreau" style="--rot:270deg;--d:90ms;background:#0F463B"><svg class="t" viewBox="189.0 11.5 69.6 45.9" aria-hidden="true"><polygon fill="#1E6B58" points="233.86 56.53 257.78 32.61 237.72 12.55 190.14 12.55 190.02 12.68 233.86 56.53"/></svg></div><div class="carreau" style="--rot:180deg;--d:135ms;background:#14564A"></div><div class="carreau" style="--rot:0deg;--d:180ms;background:#0C3A31"><svg class="t" viewBox="66.8 41.6 69.6 46.0" aria-hidden="true"><polygon fill="#ED4746" points="111.61 42.71 67.76 86.55 67.89 86.68 115.47 86.68 135.53 66.62 111.61 42.71"/></svg></div><div class="carreau" style="--rot:90deg;--d:225ms;background:#0F463B"></div><div class="carreau" style="--rot:0deg;--d:270ms;background:#14564A"><svg class="t" viewBox="121.2 11.5 69.6 45.9" aria-hidden="true"><polygon fill="#F8B133" points="146.17 56.53 190.02 12.68 189.89 12.55 142.31 12.55 122.25 32.61 146.17 56.53"/></svg></div><div class="carreau" style="--rot:90deg;--d:90ms;background:#12503F"><svg class="t" viewBox="189.0 11.5 69.6 45.9" aria-hidden="true"><polygon fill="#F8B133" points="233.86 56.53 257.78 32.61 237.72 12.55 190.14 12.55 190.02 12.68 233.86 56.53"/></svg></div><div class="carreau" style="--rot:0deg;--d:135ms;background:#0C3A31"></div><div class="carreau" style="--rot:270deg;--d:180ms;background:#0C3A31"><svg class="t" viewBox="43.0 -1.0 49.8 41.0" aria-hidden="true"><path fill="#F3EEE4" d="M50.98-1.71h33.82v12.78c0,11.61-9.43,21.04-21.04,21.04h-12.78V-1.71h0Z" transform="translate(105.15 73.96) rotate(-135)"/></svg></div><div class="carreau" style="--rot:270deg;--d:225ms;background:#0F463B"><svg class="t" viewBox="189.0 11.5 69.6 45.9" aria-hidden="true"><polygon fill="#1E6B58" points="233.86 56.53 257.78 32.61 237.72 12.55 190.14 12.55 190.02 12.68 233.86 56.53"/></svg></div><div class="carreau" style="--rot:270deg;--d:270ms;background:#12503F"><svg class="t" viewBox="43.0 -1.0 49.8 41.0" aria-hidden="true"><path fill="#1E6B58" d="M50.98-1.71h33.82v12.78c0,11.61-9.43,21.04-21.04,21.04h-12.78V-1.71h0Z" transform="translate(105.15 73.96) rotate(-135)"/></svg></div><div class="carreau" style="--rot:180deg;--d:315ms;background:#0F463B"><svg class="t" viewBox="66.8 41.6 69.6 46.0" aria-hidden="true"><polygon fill="#ED4746" points="111.61 42.71 67.76 86.55 67.89 86.68 115.47 86.68 135.53 66.62 111.61 42.71"/></svg></div><div class="carreau" style="--rot:0deg;--d:135ms;background:#12503F"><svg class="t" viewBox="165.0 59.1 49.8 41.0" aria-hidden="true"><path fill="#F3EEE4" d="M172.97,67.12h33.82v12.78c0,11.61-9.43,21.04-21.04,21.04h-12.78v-33.82h0Z" transform="translate(115.04 -109.66) rotate(45)"/></svg></div><div class="carreau" style="--rot:0deg;--d:180ms;background:#0C3A31"><svg class="t" viewBox="121.2 11.5 69.6 45.9" aria-hidden="true"><polygon fill="#F8B133" points="146.17 56.53 190.02 12.68 189.89 12.55 142.31 12.55 122.25 32.61 146.17 56.53"/></svg></div><div class="carreau" style="--rot:180deg;--d:225ms;background:#0F463B"><svg class="t" viewBox="189.0 11.5 69.6 45.9" aria-hidden="true"><polygon fill="#F8B133" points="233.86 56.53 257.78 32.61 237.72 12.55 190.14 12.55 190.02 12.68 233.86 56.53"/></svg></div><div class="carreau" style="--rot:180deg;--d:270ms;background:#0C3A31"><svg class="t" viewBox="-1.0 41.6 69.6 46.0" aria-hidden="true"><polygon fill="#ED4746" points="23.92 42.71 0 66.62 20.06 86.68 67.64 86.68 67.76 86.55 23.92 42.71"/></svg></div><div class="carreau" style="--rot:180deg;--d:315ms;background:#0C3A31"><svg class="t" viewBox="43.0 -1.0 49.8 41.0" aria-hidden="true"><path fill="#F3EEE4" d="M50.98-1.71h33.82v12.78c0,11.61-9.43,21.04-21.04,21.04h-12.78V-1.71h0Z" transform="translate(105.15 73.96) rotate(-135)"/></svg></div><div class="carreau" style="--rot:270deg;--d:360ms;background:#14564A"><svg class="t" viewBox="189.0 11.5 69.6 45.9" aria-hidden="true"><polygon fill="#1E6B58" points="233.86 56.53 257.78 32.61 237.72 12.55 190.14 12.55 190.02 12.68 233.86 56.53"/></svg></div><div class="carreau" style="--rot:270deg;--d:180ms;background:#12503F"><svg class="t" viewBox="43.0 -1.0 49.8 41.0" aria-hidden="true"><path fill="#1E6B58" d="M50.98-1.71h33.82v12.78c0,11.61-9.43,21.04-21.04,21.04h-12.78V-1.71h0Z" transform="translate(105.15 73.96) rotate(-135)"/></svg></div><div class="carreau" style="--rot:0deg;--d:225ms;background:#0C3A31"></div><div class="carreau" style="--rot:180deg;--d:270ms;background:#14564A"><svg class="t" viewBox="165.0 59.1 49.8 41.0" aria-hidden="true"><path fill="#F3EEE4" d="M172.97,67.12h33.82v12.78c0,11.61-9.43,21.04-21.04,21.04h-12.78v-33.82h0Z" transform="translate(115.04 -109.66) rotate(45)"/></svg></div><div class="carreau" style="--rot:0deg;--d:315ms;background:#0C3A31"><svg class="t" viewBox="121.2 11.5 69.6 45.9" aria-hidden="true"><polygon fill="#F8B133" points="146.17 56.53 190.02 12.68 189.89 12.55 142.31 12.55 122.25 32.61 146.17 56.53"/></svg></div><div class="carreau" style="--rot:270deg;--d:360ms;background:#12503F"><svg class="t" viewBox="189.0 11.5 69.6 45.9" aria-hidden="true"><polygon fill="#F8B133" points="233.86 56.53 257.78 32.61 237.72 12.55 190.14 12.55 190.02 12.68 233.86 56.53"/></svg></div><div class="carreau" style="--rot:0deg;--d:405ms;background:#0C3A31"><svg class="t" viewBox="-1.0 41.6 69.6 46.0" aria-hidden="true"><polygon fill="#ED4746" points="23.92 42.71 0 66.62 20.06 86.68 67.64 86.68 67.76 86.55 23.92 42.71"/></svg></div><div class="carreau" style="--rot:90deg;--d:225ms;background:#14564A"></div><div class="carreau" style="--rot:270deg;--d:270ms;background:#0C3A31"></div><div class="carreau" style="--rot:0deg;--d:315ms;background:#0C3A31"><svg class="t" viewBox="43.0 -1.0 49.8 41.0" aria-hidden="true"><path fill="#1E6B58" d="M50.98-1.71h33.82v12.78c0,11.61-9.43,21.04-21.04,21.04h-12.78V-1.71h0Z" transform="translate(105.15 73.96) rotate(-135)"/></svg></div><div class="carreau" style="--rot:90deg;--d:360ms;background:#0F463B"><svg class="t" viewBox="66.8 41.6 69.6 46.0" aria-hidden="true"><polygon fill="#ED4746" points="111.61 42.71 67.76 86.55 67.89 86.68 115.47 86.68 135.53 66.62 111.61 42.71"/></svg></div><div class="carreau" style="--rot:90deg;--d:405ms;background:#0F463B"><svg class="t" viewBox="165.0 59.1 49.8 41.0" aria-hidden="true"><path fill="#F3EEE4" d="M172.97,67.12h33.82v12.78c0,11.61-9.43,21.04-21.04,21.04h-12.78v-33.82h0Z" transform="translate(115.04 -109.66) rotate(45)"/></svg></div><div class="carreau" style="--rot:0deg;--d:450ms;background:#0F463B"><svg class="t" viewBox="121.2 11.5 69.6 45.9" aria-hidden="true"><polygon fill="#F8B133" points="146.17 56.53 190.02 12.68 189.89 12.55 142.31 12.55 122.25 32.61 146.17 56.53"/></svg></div><div class="carreau" style="--rot:0deg;--d:270ms;background:#14564A"><svg class="t" viewBox="189.0 11.5 69.6 45.9" aria-hidden="true"><polygon fill="#F8B133" points="233.86 56.53 257.78 32.61 237.72 12.55 190.14 12.55 190.02 12.68 233.86 56.53"/></svg></div><div class="carreau" style="--rot:90deg;--d:315ms;background:#12503F"><svg class="t" viewBox="-1.0 41.6 69.6 46.0" aria-hidden="true"><polygon fill="#ED4746" points="23.92 42.71 0 66.62 20.06 86.68 67.64 86.68 67.76 86.55 23.92 42.71"/></svg></div><div class="carreau" style="--rot:270deg;--d:360ms;background:#0C3A31"><svg class="t" viewBox="43.0 -1.0 49.8 41.0" aria-hidden="true"><path fill="#F3EEE4" d="M50.98-1.71h33.82v12.78c0,11.61-9.43,21.04-21.04,21.04h-12.78V-1.71h0Z" transform="translate(105.15 73.96) rotate(-135)"/></svg></div><div class="carreau" style="--rot:180deg;--d:405ms;background:#12503F"></div><div class="carreau" style="--rot:90deg;--d:450ms;background:#12503F"><svg class="t" viewBox="43.0 -1.0 49.8 41.0" aria-hidden="true"><path fill="#1E6B58" d="M50.98-1.71h33.82v12.78c0,11.61-9.43,21.04-21.04,21.04h-12.78V-1.71h0Z" transform="translate(105.15 73.96) rotate(-135)"/></svg></div><div class="carreau" style="--rot:270deg;--d:495ms;background:#0F463B"><svg class="t" viewBox="66.8 41.6 69.6 46.0" aria-hidden="true"><polygon fill="#ED4746" points="111.61 42.71 67.76 86.55 67.89 86.68 115.47 86.68 135.53 66.62 111.61 42.71"/></svg></div></div>
+</div>
+<script>
+(function () {
+  var ENVOI = "https://formsubmit.co/ajax/luca@vista-africa.com";
+  var f = document.getElementById("formulaire");
+  var bloc = document.getElementById("inscription");
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var email = f.email;
+    if (!email.value || !email.checkValidity()) { email.focus(); email.style.borderColor = "#ED4746"; return; }
+    var bouton = f.querySelector("button");
+    bouton.disabled = true; bouton.textContent = "Sending…";
+    bloc.classList.remove("echec");
+    fetch(ENVOI, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        email: email.value, role: f.role.value,
+        _subject: "VISTA teaser: new sign-up (" + f.role.value + ")",
+        _replyto: email.value, _template: "table", _captcha: "false"
+      })
+    }).then(function (r) { return r.json(); }).then(function (d) {
+      if (String(d.success) === "true") { bloc.classList.add("envoye"); }
+      else { throw new Error(d.message || "refus"); }
+    }).catch(function () {
+      bloc.classList.add("echec"); bouton.disabled = false; bouton.textContent = "Reach out";
+    });
+  });
+  f.email.addEventListener("input", function () { this.style.borderColor = ""; });
+})();
+</script>
+</body>
+</html>
